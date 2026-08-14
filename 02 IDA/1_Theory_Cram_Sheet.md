@@ -71,7 +71,7 @@ The practical test scope document lines up exactly with B.1+C.1+D.1 in code form
 - Data science: large-scale, often messy real-world data; combines statistics + computer science + domain knowledge; emphasis on prediction and automation, using programming to scale.
 
 **CRISP-DM — Cross Industry Standard Process for Data Mining** (know this cold, it's the anchor of the whole module):
-1. **Business Understanding** — define the objective, assess the situation, translate a vague business goal into a specific, measurable question (e.g. "users get too much junk mail" → "build a binary classifier that flags spam with ≥99% precision").
+1. **Business Understanding** — define the objective by assessing the current situation and outline technical goals, (e.g. "users get too much junk mail" → "build a binary classifier that flags spam with ≥99% precision").
 2. **Data Understanding** — explore the data's structure, check its quality.
 3. **Data Preparation** — clean, format, handle missing values/outliers (data scientists spend up to ~80% of project time here).
 4. **Modelling** — apply algorithms (e.g. Logistic Regression, Decision Tree).
