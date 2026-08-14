@@ -243,6 +243,14 @@ plt.show()
 ## Part 6 — Feature Selection / Pre-processing
 
 ```python
+# Manually define your feature list (drop IDs, names, free text, and the target)
+FEATURES = ["col1", "col2", "col3"]     # <-- EDIT to your dataset
+TARGET   = "TARGET_COLUMN"              # <-- EDIT to your dataset
+
+#Set X and Y
+X = df[FEATURES].copy()
+y = df[TARGET].copy()
+
 # Show which columns are numerical vs categorical
 print("Numerical columns:")
 print(df.select_dtypes(include=np.number).columns.tolist())
@@ -250,20 +258,11 @@ print(df.select_dtypes(include=np.number).columns.tolist())
 print("Categorical columns:")
 print(df.select_dtypes(include="object").columns.tolist())
 
-# Manually define your feature list (drop IDs, names, free text, and the target)
-FEATURES = ["col1", "col2", "col3"]     # <-- EDIT to your dataset
-TARGET   = "TARGET_COLUMN"              # <-- EDIT to your dataset
-
-X = df[FEATURES].copy()
-y = df[TARGET].copy()
-
-CATEGORICAL_FEATURES = ["cat_col1", "cat_col2"]   # <-- EDIT
-NUMERICAL_FEATURES   = [c for c in FEATURES if c not in CATEGORICAL_FEATURES]
 ```
 
 **Convert categorical → numerical (encoding).** The fastest exam-day method is `pd.get_dummies`:
 ```python
-X = pd.get_dummies(X, columns=CATEGORICAL_FEATURES, drop_first=True)
+X = pd.get_dummies(X, columns=["Categorical_Col1", "Categorical_Col2"], drop_first=True)
 X.head()
 ```
 
